@@ -11,9 +11,12 @@ def read_data(data):
         vetores_dados.append((float(raw_data[0]),float(raw_data[1])))
     return vetores_dados
 
+st.image('logo.png')
+
 st.title('AmorphizApp')
 st.subheader('Pair Distribution Function Upload, Visualization and Insights')
 
+st.markdown('#### Upload')
 st.write('Upload you .XY PDF file. Exclude the headers. The data must follow the displayed example:')
 st.write('\"0.0 0.0')
 st.write('0.001 0.01') 
@@ -32,3 +35,6 @@ if upload_file is not None:
     plt.ylabel('G(r)')
     plt.xlabel('r [Å]')
     st.pyplot(fig)
+
+st.markdown('#### AI Insights')
+st.write('TBD')
