@@ -2,6 +2,10 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from io import StringIO
 from interpolate import *
+import tensorflow as tf
+import numpy as np
+
+dnn_model = tf.keras.models.load_model('drug_dnn_model.h5')
 
 def read_data(data):
     vetores_dados = []
@@ -37,7 +41,18 @@ if upload_file is not None:
     st.pyplot(fig)
 
 st.markdown('#### AI Insights')
-st.write('TBD')
+
+if upload_file is not None:
+    # st.write(data)
+    x = np.reshape(data[1], (1,len(data[1])))
+    P = dnn_model(x)
+    fig2 = plt.figure()
+    arr = P.numpy()[0]*100
+    st.write(arr)
+    plt.bar(['Flubendazole','Verapamil'], arr)
+    st.pyplot(fig2)
+
+# st.write('TBD')
 
 st.markdown('#### Please cite us:')
 st.code('''@article{coelhosilva2024,
