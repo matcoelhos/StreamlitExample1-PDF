@@ -13,7 +13,7 @@ def read_data(data):
 
 st.image('logo.png')
 
-st.title('AmorphizApp')
+st.title('AmorphizApp #2')
 st.subheader('Pair Distribution Function Upload, Visualization and Insights')
 
 st.markdown('#### Upload')
