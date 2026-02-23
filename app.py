@@ -8,19 +8,18 @@ def read_data(data):
     for line in data:
         raw_data = line.split(' ')
         raw_data = [i for i in raw_data if i != '']
-        # x_data.append(float(raw_data[0]))
-        # y_data.append(float(raw_data[1]))
         vetores_dados.append((float(raw_data[0]),float(raw_data[1])))
-
-    # vetores_dados.append(x_data)
-    # vetores_dados.append(y_data)
     return vetores_dados
 
-st.title('Farmacos APP')
-st.subheader('Upload e visualização de PDFs')
+st.title('AmorphizApp')
+st.subheader('Pair Distribution Function Upload, Visualization and Insights')
 
-st.write('Carregue seus dados em txt')
-upload_file = st.file_uploader('Escolha seu arquivo .xy em txt')
+st.write('Upload you .XY PDF file. Exclude the headers. The data must follow the displayed example:')
+st.write('\"0.0 0.0')
+st.write('0.001 0.01') 
+st.write('0.003 0.02') 
+st.write('...\"')
+upload_file = st.file_uploader('Upload your file below')
 
 
 if upload_file is not None:
@@ -29,4 +28,7 @@ if upload_file is not None:
     data = interpolate(data, end=50.0)
     fig = plt.figure()
     plt.plot(data[0],data[1])
+    plt.title('PDF plot (0-50 Å)')
+    plt.ylabel('G(r)')
+    plt.xlabel('r [Å]')
     st.pyplot(fig)
