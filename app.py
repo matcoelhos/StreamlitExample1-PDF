@@ -25,7 +25,7 @@ upload_file = st.file_uploader('Escolha seu arquivo .xy em txt')
 if upload_file is not None:
     raw_data = StringIO(upload_file .getvalue().decode("utf-8"))
     data = read_data(raw_data)
-    data = interpolate(data)
+    data = interpolate(data, end=50.0)
     fig = plt.figure()
     plt.plot(data[0],data[1])
     st.pyplot(fig)
