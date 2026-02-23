@@ -7,6 +7,7 @@ def read_data(data):
     vetores_dados = []
     for line in data:
         raw_data = line.split(' ')
+        raw_data = [i for i in raw_data if i != '']
         # x_data.append(float(raw_data[0]))
         # y_data.append(float(raw_data[1]))
         vetores_dados.append((float(raw_data[0]),float(raw_data[1])))
