@@ -1,1 +1,1 @@
-# StreamlitExample1-PDF
+# AmorphizApp Streamlit application
