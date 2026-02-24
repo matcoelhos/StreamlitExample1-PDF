@@ -49,7 +49,7 @@ if upload_file is not None:
     fig2 = plt.figure()
     arr = P.numpy()[0]*100
     st.write(arr)
-    plt.bar(['Flubendazole','Verapamil'], arr)
+    plt.bar(['Flubendazole','Verapamil','None'], arr)
     st.pyplot(fig2)
 
 # st.write('TBD')
