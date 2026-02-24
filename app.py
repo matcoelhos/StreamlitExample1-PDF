@@ -17,7 +17,7 @@ def read_data(data):
 
 st.image('logo.png')
 
-st.title('AmorphizApp')
+st.title('AmorphizAI (AI-PDF DDB)')
 st.subheader('Pair Distribution Function Upload, Visualization and Insights')
 
 st.markdown('#### Upload')
